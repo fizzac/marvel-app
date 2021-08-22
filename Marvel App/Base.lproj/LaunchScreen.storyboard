@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Marvel_Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="FPA-u0-kJC" userLabel="Logo Image View">
-                                <rect key="frame" x="50" y="385.5" width="314" height="125"/>
+                                <rect key="frame" x="50" y="273.5" width="314" height="125"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mp5-pR-V1g" userLabel="Copyright Label">
                                 <rect key="frame" x="10" y="753.5" width="394" height="61"/>
@@ -32,7 +32,7 @@
                         <constraints>
                             <constraint firstItem="Mp5-pR-V1g" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="1.75" id="3b4-id-8M1"/>
                             <constraint firstAttribute="trailing" secondItem="Mp5-pR-V1g" secondAttribute="trailing" constant="10" id="I5b-u7-vVn"/>
-                            <constraint firstItem="FPA-u0-kJC" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="eoW-KB-WXy"/>
+                            <constraint firstItem="FPA-u0-kJC" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="0.75" id="eoW-KB-WXy"/>
                             <constraint firstItem="FPA-u0-kJC" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="riV-aQ-9w1"/>
                             <constraint firstItem="Mp5-pR-V1g" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="10" id="rm4-N4-Q6e"/>
                         </constraints>

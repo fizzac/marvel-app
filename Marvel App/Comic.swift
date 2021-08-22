@@ -22,10 +22,12 @@ struct Comic: Codable
     var title:String
     var description:String?
     var thumbnail:[String:String]
+    var urls:[[String:String]]
     
-    public init(titleParam:String, descriptionParam:String, thumbnailParam:[String:String])  {
+    public init(titleParam:String, descriptionParam:String, thumbnailParam:[String:String], urlsParam:[[String:String]])  {
         self.title = titleParam
         self.description = descriptionParam
         self.thumbnail = thumbnailParam
+        self.urls = urlsParam
     }
 }
