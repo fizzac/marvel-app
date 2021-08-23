@@ -67,9 +67,9 @@ To use the Marvel API, you need a set of developer keys (public key and private 
 To add your developer keys to this project, you will have to make a change to the code in ViewController.swift. In this file, the constant baseURL contains the Marvel API's base endpoint. The constant urlKeys contains the apikeys, a timestamp, and a hash. These two constants (baseURL and urlKeys) are combined with the comic ID input taken from the user to create the url that will be used to make the request to the Marvel API. 
 
  The Marvel API request must contain the following:
-* apikey: your public developer key
-* ts: a timestamp (or other long string which can change on a request by request basis)
-* hash: an md5 digest of the ts parameter, your private key, and your public key
+* apikey — your public developer key
+* ts — a timestamp (or other long string which can change on a request by request basis)
+* hash — an md5 digest of the ts parameter, your private key, and your public key
 
 ### Example Scenario
 * apikey: cake
