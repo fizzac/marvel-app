@@ -16,9 +16,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var idTextField: UITextField!
     //@IBOutlet weak var searchStackView: UIStackView!
     
-    var myAttributionURL:String = ""
-    let dispatchGroup = DispatchGroup()
+    var currentTitle = ""
+    var currentDescription = ""
+    var currentImageUrl = ""
+    var currentAttributionUrl:String = ""
     var currentComic = Comic(titleParam: "", descriptionParam: "", thumbnailParam: ["":""], urlsParam: [["":""]])
+    
+    let dispatchGroup = DispatchGroup()
     let baseURL = "https://gateway.marvel.com/v1/public/comics/"
     let urlKeys = "?ts=1&apikey=32b416300c15b326ac119c7fe07c0fa3&hash=4b048e70838e1b1aba77601ca4582c33"
     
@@ -49,37 +53,37 @@ class ViewController: UIViewController {
             // Wait to be notified that asynchronous tasks have finished, then execute code in this closure
             dispatchGroup.notify(queue: .main)
             {
-                
-                if self.currentComic.title == "" || self.currentComic.title == nil
+                // If there is a description, replace breaks (<br>) and newline characters (\n) with carriage returns (\r) in the  description, and remove all extra spaces from the end of the description
+                if self.currentDescription != ""
                 {
-                    // If title is empty, assume invalid Comic ID was inputted by the user
+                    self.currentDescription = self.currentDescription.replacingOccurrences(of: "<br>", with: "\r")
+                    self.currentDescription = self.currentDescription.replacingOccurrences(of: "\n", with: "\r")
+                    while (self.currentDescription.hasSuffix("\r"))
+                    {
+                        self.currentDescription = String(self.currentDescription.dropLast(1))
+                    }
+                }
+                else
+                {
+                    // Else (description is empty), set default value
+                    self.currentDescription = "Description not available for this comic"
+                }
+                
+                if self.currentTitle == ""
+                {
+                    // If title is empty, assume invalid Comic ID was inputted by the user and display alert
                     print("Invalid Comic ID")
                     self.displayAlert("You provided an invalid comic ID. Please try again.")
                 }
                 else
                 {
-                    // Replace breaks (<br>) and newline characters (\n) with carriage returns (\r) in the comic description, and remove all extra spaces from the end of the description
-                    if self.currentComic.description != "" && self.currentComic.description != nil
-                    {
-                        self.currentComic.description = self.currentComic.description!.replacingOccurrences(of: "<br>", with: "\r")
-                        self.currentComic.description = self.currentComic.description!.replacingOccurrences(of: "\n", with: "\r")
-                        while (self.currentComic.description!.hasSuffix("\r"))
-                        {
-                            self.currentComic.description = String(self.currentComic.description!.dropLast(1))
-                        }
-                    }
-                    else
-                    {
-                        self.currentComic.description = "Description not available for this comic"
-                    }
-                    
-                    // Display title, description, and attribution url to user
-                    self.titleLabel.text = self.currentComic.title!
-                    self.descriptionLabel.text = self.currentComic.description!
-                    self.attributionLabel.text = "Attribution: " + self.myAttributionURL + "\r\rData provided by Marvel. © 2014 Marvel"
+                    // Display title, description, and attribution info to user
+                    self.titleLabel.text = self.currentTitle
+                    self.descriptionLabel.text = self.currentDescription
+                    self.attributionLabel.text = "Attribution: " + self.currentAttributionUrl + "\r\rData provided by Marvel. © 2014 Marvel"
                     
                     // If a url for the image is present, call function to display image to user
-                    if self.currentComic.thumbnail?["path"] != "" && self.currentComic.thumbnail != nil
+                    if self.currentImageUrl != ""
                     {
                         self.setImage()
                     }
@@ -97,7 +101,10 @@ class ViewController: UIViewController {
     func resetVarDisplay()
     {
         // Clear all variables and display fields
-        myAttributionURL = ""
+        currentTitle = ""
+        currentDescription = ""
+        currentImageUrl = ""
+        currentAttributionUrl = ""
         currentComic = Comic(titleParam: "", descriptionParam: "", thumbnailParam: ["":""], urlsParam: [["":""]])
         titleLabel.text = ""
         descriptionLabel.text = ""
@@ -109,19 +116,19 @@ class ViewController: UIViewController {
     
     func makeAPICall(_ comicID:String)
     {
-        // Notify main thread that asynchronous tasking has been started (main thread will wait for this task to finish before continuing execution)
+        // Notify main thread that asynchronous task has started
         dispatchGroup.enter()
         
         // Make URL with user-provided Comic ID input
         let url = URL(string: baseURL + comicID + urlKeys)
              
-        // Continue execution if URL object is successfully created and print URL to console, else stop execution and display alert to user
+        // If there is an error while creating the URL object,  stop execution, display alert to user, and notify the main queue that asynchronous task has ended and main thread closure that has been set to wait for this notification can now continue execution
         guard url != nil else {
             print("Error creating URL object")
-            displayAlert("Did you enter a comic ID? Please try again.")
             dispatchGroup.leave()
             return
         }
+        // URL object successfully created, print URL to console
         print("URL object created successfully")
         
         // Create URL request
@@ -146,44 +153,49 @@ class ViewController: UIViewController {
                     let comicWrapper = try decoder.decode(ComicDataWrapper.self, from: data!)
                     print(comicWrapper)
                     
-                    // Assign comic title, description, thumbnails, and image url to currentComic object of type Comic and print object to console
+                    // Assign comic title, description, thumbnails, and image url to currentComic object and print object to console
                     self.currentComic.title = comicWrapper.data.results[0].title
-                    self.currentComic.description = comicWrapper.data.results[0].description ?? "Description not available for this comic"
+                    self.currentComic.description = comicWrapper.data.results[0].description
                     self.currentComic.thumbnail = comicWrapper.data.results[0].thumbnail
                     self.currentComic.urls = comicWrapper.data.results[0].urls
                     print("Current Comic contains the following data")
                     print(self.currentComic)
+                    
+                    // Uwrap information from currentComic object and place into placeholder variables for further editing, displaying to user, and overall cleaner and easier to read code
+                    self.currentTitle = self.currentComic.title ?? ""
+                    self.currentDescription = self.currentComic.description ?? "Description not available for this comic"
+                    self.currentImageUrl = self.currentComic.thumbnail?["path"] ?? ""
                                                             
                     // Make sure there is an image url - url might be HTTP (not secure), so secure it by making it HTTPS
-                    if self.currentComic.thumbnail?["path"] != "" && self.currentComic.thumbnail != nil
+                    if self.currentImageUrl != ""
                     {
-                        self.currentComic.thumbnail!["path"] = self.secureUrlAsHttps(self.secureUrlAsHttps(self.currentComic.thumbnail!["path"]!))
+                        self.currentImageUrl = self.secureUrlAsHttps(self.currentImageUrl)
                     }
                     
                     // If there are no attribution urls, set attribution url to default value
                     if self.currentComic.urls?[0]["type"] == "" || self.currentComic.urls == nil
                     {
-                        self.myAttributionURL = "https://marvel.com"
+                        self.currentAttributionUrl = "https://marvel.com"
                     }
                     else
                     {
-                        // Else (there are attribution urls), try to find the "detail" url and assign to variable
+                        // Else (there are attribution urls), try to find the "detail" url and assign to currentAttribution
                         for item in self.currentComic.urls!
                         {
                             if item["type"] == "detail"
                             {
-                                self.myAttributionURL = item["url"] ?? "https://marvel.com"
+                                self.currentAttributionUrl = item["url"] ?? "https://marvel.com"
                             }
                         }
-                        if self.myAttributionURL == ""
+                        if self.currentAttributionUrl == ""
                         {
-                            // If there is no "detail" attribution url, assign first available url as attribution url
-                            self.myAttributionURL = self.currentComic.urls?[0]["url"] ?? "https://marvel.com"
+                            // If there is no "detail" attribution url, assign first available url as currentAttribution
+                            self.currentAttributionUrl = self.currentComic.urls?[0]["url"] ?? "https://marvel.com"
                         }
                     }
                     
                     // URL might be HTTP (not secure), so secure URL by making it HTTPS
-                    self.myAttributionURL = self.secureUrlAsHttps(self.myAttributionURL)
+                    self.currentAttributionUrl = self.secureUrlAsHttps(self.currentAttributionUrl)
                 }
                 catch
                 {
@@ -196,7 +208,7 @@ class ViewController: UIViewController {
                 // If there is an error or if there is no data, there might be a problem with the internet connection, display alert to user
                 self.displayAlert("Could not connect to the server. Please check your internet connection or try again later.")
             }
-            // Notify the main queue that asynchronous task has ended and main thread can continue execution
+            // Notify the main queue that asynchronous task has ended and main thread closure that has been set to wait for this notification can now continue execution
             self.dispatchGroup.leave()
         }
         
@@ -239,23 +251,25 @@ class ViewController: UIViewController {
     
     func setImage()
     {
-        // Notify main thread that asynchronous task has started, main thread will wait for this task to finish before continuing execution
+        // Notify main thread that asynchronous task has started
         dispatchGroup.enter()
         
+        let imageExtension = self.currentComic.thumbnail?["extension"] ?? "jpg"
+        
         // Create Image URL with url path, and appended image size and extension
-        let myComicImageUrl = URL(string: self.currentComic.thumbnail!["path"]! + "/portrait_xlarge." + self.currentComic.thumbnail!["extension"]!)!
+        let myComicImageUrl = URL(string: currentImageUrl + "/portrait_xlarge." + imageExtension)!
         
         // Create Data Task and get image
         let dataTask = URLSession.shared.dataTask(with: myComicImageUrl) { (data, response, error) in
-            if let myData = data
+            if let myImageData = data
             {
                 DispatchQueue.main.async {
                     // Display image to user
-                    self.comicImage.image = UIImage(data: myData)
+                    self.comicImage.image = UIImage(data: myImageData)
                 }
             }
             
-            // Notify main thread that aynchronous task has finished execution and main thread can continue executing
+            // Notify the main queue that asynchronous task has ended and main thread closure that has been set to wait for this notification can now continue execution
             self.dispatchGroup.leave()
         }
         
