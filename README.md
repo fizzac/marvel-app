@@ -4,14 +4,14 @@ This is a Marvel Comic lookup mobile application which displays information from
 
 
 ## Table of Contents
--[Application Description](#Application-Description)
--[Technologies & Frameworks](#Technologies-&-Frameworks)
--[Developer Keys](#Developer-Keys)
--[Setup](#Setup)
--[Testing](#Testing)
--[How to Use](#How-to-Use)
--[Project Status](#Project-Status)
--[Sources](#Sources)
+* [Application Description](#Application-Description)
+* [Technologies & Frameworks](#Technologies-&-Frameworks)
+* [Developer Keys](#Developer-Keys)
+* [Setup](#Setup)
+* [Testing](#Testing)
+* [How to Use](#How-to-Use)
+* [Project Status](#Project-Status)
+* [Sources](#Sources)
 
 
 ## Application Description
@@ -36,27 +36,27 @@ If an invalid Comic ID is inputted or if the user forgets to input a Comic ID, t
 * Swift 5
 
 ### Frameworks
-*Marvel Developer API - **developer.marvel.com**
-*Foundation
-*UIKit
+* Marvel Developer API - **developer.marvel.com**
+* Foundation
+* UIKit
 
 ### Libraries
-*Swift Standard Library
-*Object Library
-*Image Library (for app icon images and image on launch screen)
+* Swift Standard Library
+* Object Library
+* Image Library (for app icon images and image on launch screen)
 
 ### UI
-*Main.storyboard (For main interface user interface)
-*LaunchScreen.storyboard (For launch screen)
-*Icon Resize (External application that resizes app icon images)
+* Main.storyboard (For main interface user interface)
+* LaunchScreen.storyboard (For launch screen)
+* Icon Resize (External application that resizes app icon images)
 
 ### Testing
-*XCTest
+* XCTest
 
 ### Deployment Target
-*iOS 14.4
-*iPhone only
-*Portrait orientation only
+* iOS 14.4
+* iPhone only
+* Portrait orientation only
 
 
 ## Developer Keys
@@ -67,9 +67,9 @@ To use the Marvel API, you need a set of developer keys (public key and private 
 To add your developer keys to this project, you will have to make a change to the code in ViewController.swift. In this file, the constant baseURL contains the Marvel API's base endpoint. The constant urlKeys contains the apikeys, a timestamp, and a hash. These two constants (baseURL and urlKeys) are combined with the comic ID input taken from the user to create the url that will be used to make the request to the Marvel API. 
 
  The Marvel API request must contain the following:
-*apikey - your public developer key
-*ts - a timestamp (or other long string which can change on a request by request basis)
-*hash - an md5 digest of the ts parameter, your private key, and your public key
+* apikey - your public developer key
+* ts - a timestamp (or other long string which can change on a request by request basis)
+* hash - an md5 digest of the ts parameter, your private key, and your public key
 
 ### Example Scenario
 apikey - cake
@@ -77,7 +77,7 @@ ts - 1
 private key - banana
 hash - md5 hash of 1bananacake (ts + private key + public key)
 
-*NOTE: This app does not use an internal encryption to encrypt the hash with md5. As a result, the timestamp does not change from request to request, it stays the same. You must use an external program to get the hash, and copy the hash value into the ViewController file.*
+* NOTE: This app does not use an internal encryption to encrypt the hash with md5. As a result, the timestamp does not change from request to request, it stays the same. You must use an external program to get the hash, and copy the hash value into the ViewController file.*
 
 ### How to add your developer keys
 To add your developer keys into this program, download the project and open the ViewController.swift file. Locate the urlKeys constant at the top of the ViewController file, and make the following changes.
