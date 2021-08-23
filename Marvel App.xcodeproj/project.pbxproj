@@ -10,7 +10,6 @@
 		EC03E5A626CD91B800E087F9 /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC03E5A526CD91B800E087F9 /* Comic.swift */; };
 		EC084FD426D045130048AEFD /* Marvel_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC084FD326D045130048AEFD /* Marvel_AppUITests.swift */; };
 		EC12553A26D1D9CC00071FEC /* Marvel_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EC12553926D1D9CC00071FEC /* Marvel_Icon.png */; };
-		EC12554226D1DACD00071FEC /* Marvel_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EC12554126D1DACC00071FEC /* Marvel_Logo.png */; };
 		EC9D377926CC961A00EF220E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9D377826CC961A00EF220E /* AppDelegate.swift */; };
 		EC9D377B26CC961A00EF220E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9D377A26CC961A00EF220E /* SceneDelegate.swift */; };
 		EC9D377D26CC961A00EF220E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9D377C26CC961A00EF220E /* ViewController.swift */; };
@@ -18,6 +17,7 @@
 		EC9D378226CC961E00EF220E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC9D378126CC961E00EF220E /* Assets.xcassets */; };
 		EC9D378526CC961E00EF220E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9D378326CC961E00EF220E /* LaunchScreen.storyboard */; };
 		ECAF219226D01B1900B15420 /* Marvel_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAF219126D01B1900B15420 /* Marvel_AppTests.swift */; };
+		ECD4012D26D3EA18008E5546 /* Marvel_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = ECD4012C26D3EA18008E5546 /* Marvel_Logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +43,6 @@
 		EC084FD326D045130048AEFD /* Marvel_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marvel_AppUITests.swift; sourceTree = "<group>"; };
 		EC084FD526D045130048AEFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC12553926D1D9CC00071FEC /* Marvel_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Marvel_Icon.png; path = AppIconImages/Marvel_Icon.png; sourceTree = SOURCE_ROOT; };
-		EC12554126D1DACC00071FEC /* Marvel_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Marvel_Logo.png; path = AppIconImages/Marvel_Logo.png; sourceTree = SOURCE_ROOT; };
 		EC9D377526CC961A00EF220E /* Marvel App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Marvel App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC9D377826CC961A00EF220E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC9D377A26CC961A00EF220E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +54,7 @@
 		ECAF218F26D01B1900B15420 /* Marvel AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Marvel AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECAF219126D01B1900B15420 /* Marvel_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marvel_AppTests.swift; sourceTree = "<group>"; };
 		ECAF219326D01B1900B15420 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECD4012C26D3EA18008E5546 /* Marvel_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Marvel_Logo.png; path = AppIconImages/Marvel_Logo.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +121,7 @@
 				EC9D377E26CC961A00EF220E /* Main.storyboard */,
 				EC9D378126CC961E00EF220E /* Assets.xcassets */,
 				EC9D378326CC961E00EF220E /* LaunchScreen.storyboard */,
-				EC12554126D1DACC00071FEC /* Marvel_Logo.png */,
+				ECD4012C26D3EA18008E5546 /* Marvel_Logo.png */,
 				EC12553926D1D9CC00071FEC /* Marvel_Icon.png */,
 				EC9D378626CC961E00EF220E /* Info.plist */,
 			);
@@ -248,7 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC9D378526CC961E00EF220E /* LaunchScreen.storyboard in Resources */,
-				EC12554226D1DACD00071FEC /* Marvel_Logo.png in Resources */,
+				ECD4012D26D3EA18008E5546 /* Marvel_Logo.png in Resources */,
 				EC12553A26D1D9CC00071FEC /* Marvel_Icon.png in Resources */,
 				EC9D378226CC961E00EF220E /* Assets.xcassets in Resources */,
 				EC9D378026CC961A00EF220E /* Main.storyboard in Resources */,
@@ -484,7 +484,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Marvel App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -493,6 +494,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Chaudhry-Fizza.Marvel-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -503,7 +505,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Marvel App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -512,6 +515,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Chaudhry-Fizza.Marvel-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Dispatch
 
 class ViewController: UIViewController {
 
@@ -14,7 +15,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var comicImage: UIImageView!
     @IBOutlet weak var attributionLabel: UILabel!
     @IBOutlet weak var idTextField: UITextField!
-    //@IBOutlet weak var searchStackView: UIStackView!
     
     var currentTitle = ""
     var currentDescription = ""

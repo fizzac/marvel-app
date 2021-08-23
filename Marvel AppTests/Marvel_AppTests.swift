@@ -15,7 +15,7 @@ class Marvel_AppTests: XCTestCase {
     
     func testValidID()
     {
-        // Test app with valid comic ID
+        // Test app with valid comic ID for a comic that has a description
         
         // Set control (expected results after API call is processed)
         let controlTitle = "Marvel Knights Spider-Man (2004) #14"
@@ -48,7 +48,7 @@ class Marvel_AppTests: XCTestCase {
     
     func testNoDescription()
     {
-        // Test app with valid comic ID that has no description
+        // Test app with valid comic ID for a comic that does not have a description
         
         // Set control (expected results after API call is processed)
         let controlTitle = "Miles Morales: Spider-Man Annual (2021) #1"
