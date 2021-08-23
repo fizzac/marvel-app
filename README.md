@@ -18,7 +18,7 @@ This is a Marvel Comic lookup mobile application which displays information from
 
 Every comic on the Marvel website has a correlating Comic ID that can be used to lookup the comic through the Marvel API.
 
-This application prompts users to enter a comic ID into the serach bar. The app uses this user inputted Comic ID to make an API request to the Marvel API, which returns data about the comic associated with the Comic ID. The resulting data is then parsed through JSON. The app then displays the comic book title, cover image, description (if available), and an attribution link associated with the comic.
+This application prompts users to enter a comic ID into the search bar. The app uses this user inputted Comic ID to make an API request to the Marvel API, which returns data about the comic associated with the Comic ID. The resulting data is then parsed through JSON. The app then displays the comic book title, cover image, description (if available), and an attribution link associated with the comic.
 
 The app gets the data from the Marvel API using asynchronous tasking. Later in execution, the app uses a url to get the cover image for the comic, once again using asynchronous tasking. In these two cases, asynchronous tasking is used so the execution of the rest of the application is not slowed down.
 
@@ -26,7 +26,7 @@ The code that displays the data (title, cover image, description, and attributio
 
 When each asynchronous task starts, the main queue is notified that an asynchronous task has started and it should wait for completion. Once the asynchronous task ends, the main queue is notified that the asynchronous task has completed, and the main thread can continue its execution.
 
-If an invalid Comic ID is inputted or if the user forgets to input a Comic ID, the app  notifies the user and asks them to try again. If there is an error getting data from the Marvel API, the user is notifed and told to check their internet connection or to try again later (perhaps there is a server side issue and the app cannot get data until the issue has been resolved).
+If an invalid Comic ID is inputted or if the user forgets to input a Comic ID, the app  notifies the user and asks them to try again. If there is an error getting data from the Marvel API, the user is notified and told to check their internet connection or to try again later (perhaps there is a server side issue and the app cannot get data until the issue has been resolved).
 
 
 ## Technologies & Frameworks
@@ -111,7 +111,7 @@ Where:
 5. In the "Navigators" Pane, select the topmost file (it is a blue icon, followed by the name of the application).
 6. Choose your application under "Targets" and then select "Signing and Capabilities" in the Project Editor.
 7. Assign the project to a team.
-    **NOTE: If you are are registered with the Apple Developer Program, register your external device before running the application**
+    **NOTE: If you are registered with the Apple Developer Program, register your external device before running the application**
 8. Select "Signing and Capabilities" under "Target" in theAssign the project to a team on the Signing and Capabilities tab in Project editor
 9. Create a Provisioning Profile by logging into Xcode if you don't already have one (Xcode -> Preferences -> Accounts)
     **NOTE: If you are registered with the Apple Developer Program, you will need a Development Certificate before creating the Provisioning Profile**
@@ -137,7 +137,7 @@ Where:
     *Test Behavior: App opens, tap on search bar, valid Comic ID inputted to the search bar, search button pressed, comic information displays on screen, scroll down the page, scroll up the page - end of test
 2. testInvalidID - testing app with invalid comic ID
     **Test Behavior: App opens, tap on search bar, invalid Comic ID inputted to the search bar, search button pressed, alert displayed to user with message "You provided an invalid comic ID. Please try again," no other display on screen, alert dismissed - end of test*
-3. testNoID - tesing app with no comic ID inputted by user
+3. testNoID - testing app with no comic ID inputted by user
     **Test Behavior: App opens, tap on search bar, invalid Comic ID inputted to the search bar, search button pressed, alert displayed to user with message "You forgot to provide a comic ID. Please try again," no other display on screen, alert dismissed - end of test*
 
 ## How to Use

@@ -10,18 +10,21 @@ import Dispatch
 
 class ViewController: UIViewController {
 
+    // Labels and textfields on the storyboard that the ViewController will access (get from and set to)
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var comicImage: UIImageView!
     @IBOutlet weak var attributionLabel: UILabel!
     @IBOutlet weak var idTextField: UITextField!
     
+    // Declare and initialize variables that will store the data that is returned by the API call
     var currentTitle = ""
     var currentDescription = ""
     var currentImageUrl = ""
     var currentAttributionUrl:String = ""
     var currentComic = Comic(titleParam: "", descriptionParam: "", thumbnailParam: ["":""], urlsParam: [["":""]])
     
+    // Declare and initialize the constant that will handle ascynchronous tasking, and the constants that will be used to create the URL for the API request
     let dispatchGroup = DispatchGroup()
     let baseURL = "https://gateway.marvel.com/v1/public/comics/"
     let urlKeys = "?ts=1&apikey=32b416300c15b326ac119c7fe07c0fa3&hash=4b048e70838e1b1aba77601ca4582c33"
@@ -30,7 +33,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Make sure displays and variables are empty
+        // Make sure that the UI is not displaying any comic information and all variables are empty
         resetVarDisplay()
     }
     
@@ -100,7 +103,7 @@ class ViewController: UIViewController {
     
     func resetVarDisplay()
     {
-        // Clear all variables and display fields
+        // Clear all variables and all comic information that was displayed to the UI
         currentTitle = ""
         currentDescription = ""
         currentImageUrl = ""
