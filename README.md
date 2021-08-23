@@ -72,21 +72,21 @@ To add your developer keys to this project, you will have to make a change to th
 * hash - an md5 digest of the ts parameter, your private key, and your public key
 
 ### Example Scenario
-apikey - cake
-ts - 1
-private key - banana
-hash - md5 hash of 1bananacake (ts + private key + public key)
+* apikey - cake
+* ts - 1
+* private key - banana
+* hash - md5 hash of 1bananacake (ts + private key + public key)
 
 * NOTE: This app does not use an internal encryption to encrypt the hash with md5. As a result, the timestamp does not change from request to request, it stays the same. You must use an external program to get the hash, and copy the hash value into the ViewController file.*
 
 ### How to add your developer keys
 To add your developer keys into this program, download the project and open the ViewController.swift file. Locate the urlKeys constant at the top of the ViewController file, and make the following changes.
-**ts=your_time_stamp**
-**apikey=your_public_key**
-**hash=your_hash**
+* **ts=your_time_stamp**
+* **apikey=your_public_key**
+* **hash=your_hash**
 
 When you are done, the urlKeys constant should look like the following:
-**"?ts=your_time_stamp&apikey=your_public_key&hash=your_hash"**
+* **"?ts=your_time_stamp&apikey=your_public_key&hash=your_hash"**
 
 Where:
 **your_time_stamp** - a timestamp or string that you choose, this string will not change from request to request in this particular program
@@ -158,7 +158,7 @@ Where:
  
  ## Sources
  
- Marvel Developer API - developer.marvel.com
- Images (cover images, launch screen image, app icon image) - marvel.com
- Authorization and Signing - https://developer.marvel.com/documentation/authorization
- Data Provided by Marvel. © 2014 Marvel
+ * Marvel Developer API - developer.marvel.com
+ * Images (cover images, launch screen image, app icon image) - marvel.com
+ * Authorization and Signing - https://developer.marvel.com/documentation/authorization
+ * Data Provided by Marvel. © 2014 Marvel
