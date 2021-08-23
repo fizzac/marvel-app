@@ -19,10 +19,10 @@ struct ComicDataContainer: Codable
 
 struct Comic: Codable
 {
-    var title:String
+    var title:String?
     var description:String?
-    var thumbnail:[String:String]
-    var urls:[[String:String]]
+    var thumbnail:[String:String]?
+    var urls:[[String:String]]?
     
     public init(titleParam:String, descriptionParam:String, thumbnailParam:[String:String], urlsParam:[[String:String]])  {
         self.title = titleParam

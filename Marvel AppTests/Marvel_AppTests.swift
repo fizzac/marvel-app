@@ -18,10 +18,9 @@ class Marvel_AppTests: XCTestCase {
         // Test app with valid comic ID
         
         // Set control (expected results after API call is processed)
-        let controlTitle = "Marvel Knights Spider-Man (2004) #14"
-        let controlDescription = "The Daily Bugle's got a new star reporter. Ethan Edwards is his name! Peter may get the pic, but not before Ethan's got the scoop. And if that weren't enough, there may be even more to Ethan than meets the eye...\n"
-        let controlImageURL = "https://i.annihil.us/u/prod/marvel/i/mg/1/04/57ae48e7dcea9/portrait_xlarge.jpg"
-        let controlAttributionURL = "https://marvel.com/comics/issue/2000/marvel_knights_spider-man_2004_14?utm_campaign=apiRef&utm_source=32b416300c15b326ac119c7fe07c0fa3\r\rData provided by Marvel.\n© 2014 Marvel"
+        let controlComic = Comic(titleParam: "Marvel Knights Spider-Man (2004) #14", descriptionParam: "The Daily Bugle's got a new star reporter. Ethan Edwards is his name! Peter may get the pic, but not before Ethan's got the scoop. And if that weren't enough, there may be even more to Ethan than meets the eye...\n", thumbnailParam: ["path":"https://i.annihil.us/u/prod/marvel/i/mg/1/04/57ae48e7dcea9"], urlsParam: [["detail":"http://marvel.com/comics/issue/2000/marvel_knights_spider-man_2004_14?utm_campaign=apiRef&utm_source=32b416300c15b326ac119c7fe07c0fa3"]])
+        
+        let controlAttributionURL = "https://marvel.com/comics/issue/2000/marvel_knights_spider-man_2004_14?utm_campaign=apiRef&utm_source=32b416300c15b326ac119c7fe07c0fa3"
         
         // Load view
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -39,9 +38,9 @@ class Marvel_AppTests: XCTestCase {
         XCTWaiter().wait(for: [promise], timeout: 5)
         
         // Compare comic title, comic description, and URL of comic image that was processed from API with the control (expected results)
-        XCTAssertEqual(self.sut.currentComic.title, controlTitle)
-        XCTAssertEqual(self.sut.myComicDescription, controlDescription)
-        XCTAssertEqual(self.sut.myImageURL, controlImageURL)
+        XCTAssertEqual(self.sut.currentComic.title, controlComic.title)
+        XCTAssertEqual(self.sut.currentComic.description, controlComic.description)
+        XCTAssertEqual(self.sut.currentComic.thumbnail!["path"], controlComic.thumbnail!["path"])
         XCTAssertEqual(self.sut.myAttributionURL, controlAttributionURL)
     }
     
@@ -51,10 +50,9 @@ class Marvel_AppTests: XCTestCase {
         // Test app with valid comic ID that has no description
         
         // Set control (expected results after API call is processed)
-        let controlTitle = "Miles Morales: Spider-Man Annual (2021) #1"
-        let controlDescription = "Description not available for this comic"
-        let controlImageURL = "https://i.annihil.us/u/prod/marvel/i/mg/f/20/60e5e1d1b5fde/portrait_xlarge.jpg"
-        let controlAttributionURL = "https://marvel.com/comics/issue/90386/miles_morales_spider-man_annual_2021_1?utm_campaign=apiRef&utm_source=32b416300c15b326ac119c7fe07c0fa3\r\rData provided by Marvel.\n© 2014 Marvel"
+        let controlComic = Comic(titleParam: "Miles Morales: Spider-Man Annual (2021) #1", descriptionParam: "Description not available for this comic", thumbnailParam: ["path":"https://i.annihil.us/u/prod/marvel/i/mg/f/20/60e5e1d1b5fde"], urlsParam: [["detail":"http://marvel.com/comics/issue/90386/miles_morales_spider-man_annual_2021_1?utm_campaign=apiRef&utm_source=32b416300c15b326ac119c7fe07c0fa3"]])
+        
+        let controlAttributionURL = "https://marvel.com/comics/issue/90386/miles_morales_spider-man_annual_2021_1?utm_campaign=apiRef&utm_source=32b416300c15b326ac119c7fe07c0fa3"
         
         // Load view
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -72,9 +70,9 @@ class Marvel_AppTests: XCTestCase {
         XCTWaiter().wait(for: [promise], timeout: 5)
         
         // Compare comic title, comic description, and URL of comic image that was processed from API with the control (expected results)
-        XCTAssertEqual(self.sut.currentComic.title, controlTitle)
-        XCTAssertEqual(self.sut.myComicDescription, controlDescription)
-        XCTAssertEqual(self.sut.myImageURL, controlImageURL)
+        XCTAssertEqual(self.sut.currentComic.title, controlComic.title)
+        XCTAssertEqual(self.sut.currentComic.description, controlComic.description)
+        XCTAssertEqual(self.sut.currentComic.thumbnail!["path"], controlComic.thumbnail!["path"])
         XCTAssertEqual(self.sut.myAttributionURL, controlAttributionURL)
     }
     
@@ -84,9 +82,8 @@ class Marvel_AppTests: XCTestCase {
         // Test app with invalid comic ID
         
         // Set control (expected results after API call is processed
-        let controlTitle = ""
-        let controlDescription = ""
-        let controlImageURL = ""
+        let controlComic = Comic(titleParam: "", descriptionParam: "", thumbnailParam: ["path":""], urlsParam: [["detail":""]])
+        
         let controlAttributionURL = ""
         
         // Load view
@@ -100,7 +97,7 @@ class Marvel_AppTests: XCTestCase {
         let input = "123456789"
         let url = URL(string: "https://apple.com")!
         
-        let dataTask = URLSession.shared.dataTask(with: url)
+        _ = URLSession.shared.dataTask(with: url)
         {_,_,_ in
             self.sut.makeAPICall(input)
             e.fulfill()
@@ -110,9 +107,9 @@ class Marvel_AppTests: XCTestCase {
         XCTWaiter().wait(for: [e], timeout: 5)
         
         // Compare comic title, comic description, and URL of comic image that was processed from API with the control (expected results)
-        XCTAssertEqual(self.sut.currentComic.title, controlTitle)
-        XCTAssertEqual(self.sut.myComicDescription, controlDescription)
-        XCTAssertEqual(self.sut.myImageURL ?? "", controlImageURL)
+        XCTAssertEqual(self.sut.currentComic.title, controlComic.title)
+        XCTAssertEqual(self.sut.currentComic.description, controlComic.description)
+        XCTAssertEqual(self.sut.currentComic.thumbnail?["path"] ?? "", controlComic.thumbnail!["path"])
         XCTAssertEqual(self.sut.myAttributionURL, controlAttributionURL)
     }
     
@@ -122,9 +119,8 @@ class Marvel_AppTests: XCTestCase {
         // Test app with no comic ID
         
         // Set control (expected results after API call is processed
-        let controlTitle = ""
-        let controlDescription = ""
-        let controlImageURL = ""
+        let controlComic = Comic(titleParam: "", descriptionParam: "", thumbnailParam: ["path":""], urlsParam: [["detail":""]])
+        
         let controlAttributionURL = ""
         
         // Load view
@@ -136,12 +132,11 @@ class Marvel_AppTests: XCTestCase {
         self.sut.searchButtonTapped((Any).self)
                 
         // Compare comic title, comic description, and URL of comic image that was processed from API with the control (expected results)
-        XCTAssertEqual(self.sut.currentComic.title, controlTitle)
-        XCTAssertEqual(self.sut.myComicDescription, controlDescription)
-        XCTAssertEqual(self.sut.myImageURL ?? "", controlImageURL)
+        XCTAssertEqual(self.sut.currentComic.title, controlComic.title)
+        XCTAssertEqual(self.sut.currentComic.description, controlComic.description)
+        XCTAssertEqual(self.sut.currentComic.thumbnail?["path"] ?? "", controlComic.thumbnail!["path"])
         XCTAssertEqual(self.sut.myAttributionURL, controlAttributionURL)
     }
-    
     
     
     override func tearDownWithError() throws {
