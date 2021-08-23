@@ -5,13 +5,13 @@ This is a Marvel Comic lookup mobile application which displays information from
 
 ## Table of Contents
 -[Application Description](#Application-Description)
--[Technologies and Frameworks]
--[Developer Keys]
--[Setup]
--[Testing]
--[How to Use]
--[Project Status]
--[Sources]
+-[Technologies & Frameworks](#Technologies-&-Frameworks)
+-[Developer Keys](#Developer-Keys)
+-[Setup](#Setup)
+-[Testing](#Testing)
+-[How to Use](#How-to-Use)
+-[Project Status](#Project-Status)
+-[Sources](#Sources)
 
 
 ## Application Description
@@ -32,8 +32,8 @@ If an invalid Comic ID is inputted or if the user forgets to input a Comic ID, t
 ## Technologies & Frameworks
 
 ### Built With
-*Xcode 12.4
-*Swift 5
+* Xcode 12.4
+* Swift 5
 
 ### Frameworks
 *Marvel Developer API - **developer.marvel.com**
