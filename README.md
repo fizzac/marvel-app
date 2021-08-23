@@ -4,14 +4,14 @@ This is a Marvel Comic lookup mobile application which displays information from
 
 
 ## Table of Contents
-*Application Description
-*Technologies and Frameworks
-*Developer Keys
-*Setup
-*Testing
-*How to Use
-*Project Status
-*Sources
+-[Application Description](#Application-Description)
+-[Technologies and Frameworks]
+-[Developer Keys]
+-[Setup]
+-[Testing]
+-[How to Use]
+-[Project Status]
+-[Sources]
 
 
 ## Application Description
