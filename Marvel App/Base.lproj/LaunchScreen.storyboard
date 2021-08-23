@@ -19,10 +19,10 @@
                                 <rect key="frame" x="50" y="273.5" width="314" height="125"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mp5-pR-V1g" userLabel="Copyright Label">
-                                <rect key="frame" x="10" y="753.5" width="394" height="61"/>
-                                <string key="text">Data provided by Marvel.
+                                <rect key="frame" x="10" y="747.5" width="394" height="73"/>
+                                <string key="text">The Data that is Displayed in this Application is Provided by Marvel.
 © 2014 Marvel</string>
-                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>

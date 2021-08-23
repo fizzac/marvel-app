@@ -161,4 +161,4 @@ Where:
  * Marvel Developer API - developer.marvel.com
  * Images (cover images, launch screen image, app icon image) - marvel.com
  * Authorization and Signing - https://developer.marvel.com/documentation/authorization
- * The Data in this Application is Provided by Marvel. © 2014 Marvel
+ * The Data that is Displayed in this Application is Provided by Marvel. © 2014 Marvel
