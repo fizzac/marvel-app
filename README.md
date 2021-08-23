@@ -89,9 +89,9 @@ When you are done, the urlKeys constant should look like the following:
 * **"?ts=your_time_stamp&apikey=your_public_key&hash=your_hash"**
 
 Where:
-**your_time_stamp** - a timestamp or string that you choose, this string will not change from request to request in this particular program
-**your_public_key** - your public developer key, you can find this in your account on the Marvel Developer website
-**your_hash** - the md5 hash, you must get this hash from an external program since this particular program does not use an internal encryption.
+* **your_time_stamp** - a timestamp or string that you choose, this string will not change from request to request in this particular program
+* **your_public_key** - your public developer key, you can find this in your account on the Marvel Developer website
+* **your_hash** - the md5 hash, you must get this hash from an external program since this particular program does not use an internal encryption.
 
 
 ## Setup
@@ -106,15 +106,15 @@ Where:
 1. Download this project to your computer.
 2. Open this project with Xcode.
 3. Connect your external device to the computer with a USB cable.
-**NOTE: Before running an Xcode project on an external device that is connected to the computer, you must complete the following steps if this setup has not been completed prior to this**
+* **NOTE: Before running an Xcode project on an external device that is connected to the computer, you must complete the following steps if this setup has not been completed prior to this**
 4. Add your Apple ID in Accounts and Preferences.
 5. In the "Navigators" Pane, select the topmost file (it is a blue icon, followed by the name of the application).
 6. Choose your application under "Targets" and then select "Signing and Capabilities" in the Project Editor.
 7. Assign the project to a team.
-    **NOTE: If you are registered with the Apple Developer Program, register your external device before running the application**
+* **NOTE: If you are registered with the Apple Developer Program, register your external device before running the application**
 8. Select "Signing and Capabilities" under "Target" in theAssign the project to a team on the Signing and Capabilities tab in Project editor
 9. Create a Provisioning Profile by logging into Xcode if you don't already have one (Xcode -> Preferences -> Accounts)
-    **NOTE: If you are registered with the Apple Developer Program, you will need a Development Certificate before creating the Provisioning Profile**
+* **NOTE: If you are registered with the Apple Developer Program, you will need a Development Certificate before creating the Provisioning Profile**
 10. Assign provisioning profile to the project under "Signing and Capabilities"
 11. Choose the target in the Xcode Toolbar - Select your external device under iOS Simulators
 12. Run project
@@ -124,21 +124,21 @@ Where:
 
 ### There are 4 Unit Tests included in the project - All tests pass when run
 1. testValidID - testing app with valid comic ID for a comic that has a description
-    *Running this test manually will result in: app displaying comic title, cover image, description, and attribution url associated with the given comic ID
+* *Running this test manually will result in: app displaying comic title, cover image, description, and attribution url associated with the given comic ID
 2. testNoDescription - testing app with valid comic ID for a comic that does not have a description
-    *Running this test manually will result in: app displaying comic title, cover image and attribution url associated with the given comic. App will display message "Description not available for this comic" instead of the comic description.
+* *Running this test manually will result in: app displaying comic title, cover image and attribution url associated with the given comic. App will display message "Description not available for this comic" instead of the comic description.
 3. testInvalidID - testing app with invalid comic ID
-    *Running this test manually will result in: app displaying alert with a message "You provided an invalid comic ID. Please try again." Nothing will be displayed on screen.
+* *Running this test manually will result in: app displaying alert with a message "You provided an invalid comic ID. Please try again." Nothing will be displayed on screen.
 4. testNoID - testing app with no comic ID inputted by user
-    *Running this test manually will result in: app displaying alert with message "You forgot to provide a comic ID. Please try again." Nothing will be displayed on screen.
+* *Running this test manually will result in: app displaying alert with message "You forgot to provide a comic ID. Please try again." Nothing will be displayed on screen.
 
 ### There are 3 UI Tests included in the project - All tests pass when run
 1. testValidID - testing app with valid comic ID.
-    *Test Behavior: App opens, tap on search bar, valid Comic ID inputted to the search bar, search button pressed, comic information displays on screen, scroll down the page, scroll up the page - end of test
+* *Test Behavior: App opens, tap on search bar, valid Comic ID inputted to the search bar, search button pressed, comic information displays on screen, scroll down the page, scroll up the page - end of test
 2. testInvalidID - testing app with invalid comic ID
-    **Test Behavior: App opens, tap on search bar, invalid Comic ID inputted to the search bar, search button pressed, alert displayed to user with message "You provided an invalid comic ID. Please try again," no other display on screen, alert dismissed - end of test*
+* *Test Behavior: App opens, tap on search bar, invalid Comic ID inputted to the search bar, search button pressed, alert displayed to user with message "You provided an invalid comic ID. Please try again," no other display on screen, alert dismissed - end of test*
 3. testNoID - testing app with no comic ID inputted by user
-    **Test Behavior: App opens, tap on search bar, invalid Comic ID inputted to the search bar, search button pressed, alert displayed to user with message "You forgot to provide a comic ID. Please try again," no other display on screen, alert dismissed - end of test*
+* *Test Behavior: App opens, tap on search bar, invalid Comic ID inputted to the search bar, search button pressed, alert displayed to user with message "You forgot to provide a comic ID. Please try again," no other display on screen, alert dismissed - end of test*
 
 ## How to Use
 
