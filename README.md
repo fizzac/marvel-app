@@ -72,10 +72,10 @@ To add your developer keys to this project, you will have to make a change to th
 * hash - an md5 digest of the ts parameter, your private key, and your public key
 
 ### Example Scenario
-* apikey - cake
-* ts - 1
-* private key - banana
-* hash - md5 hash of 1bananacake (ts + private key + public key)
+* apikey: cake
+* ts: 1
+* private key: banana
+* hash: md5 hash of 1bananacake (ts + private key + public key)
 
 * NOTE: This app does not use an internal encryption to encrypt the hash with md5. As a result, the timestamp does not change from request to request, it stays the same. You must use an external program to get the hash, and copy the hash value into the ViewController file.*
 
@@ -89,9 +89,9 @@ When you are done, the urlKeys constant should look like the following:
 * **"?ts=your_time_stamp&apikey=your_public_key&hash=your_hash"**
 
 Where:
-* **your_time_stamp** - a timestamp or string that you choose, this string will not change from request to request in this particular program
-* **your_public_key** - your public developer key, you can find this in your account on the Marvel Developer website
-* **your_hash** - the md5 hash, you must get this hash from an external program since this particular program does not use an internal encryption.
+* **your_time_stamp**: a timestamp or string that you choose, this string will not change from request to request in this particular program
+* **your_public_key**: your public developer key, you can find this in your account on the Marvel Developer website
+* **your_hash**: the md5 hash, you must get this hash from an external program since this particular program does not use an internal encryption.
 
 
 ## Setup
@@ -99,7 +99,7 @@ Where:
 ### To run this project with Xcode Simulator
 1. Download this project to your computer.
 2. Open this project with Xcode.
-3. Choose the target in the Xcode Toolbar - Select an iPhone under iOS Simulators
+3. Choose the target in the Xcode Toolbar — Select an iPhone under iOS Simulators
 4. Run project
 
 ### To run this project with on external device
@@ -116,29 +116,29 @@ Where:
 9. Create a Provisioning Profile by logging into Xcode if you don't already have one (Xcode -> Preferences -> Accounts)
 * **NOTE: If you are registered with the Apple Developer Program, you will need a Development Certificate before creating the Provisioning Profile**
 10. Assign provisioning profile to the project under "Signing and Capabilities"
-11. Choose the target in the Xcode Toolbar - Select your external device under iOS Simulators
+11. Choose the target in the Xcode Toolbar — Select your external device under iOS Simulators
 12. Run project
 
 
 ## Testing
 
-### There are 4 Unit Tests included in the project - All tests pass when run
-1. testValidID - testing app with valid comic ID for a comic that has a description
+### There are 4 Unit Tests included in the project — All tests pass when run
+1. testValidID — testing app with valid comic ID for a comic that has a description
 * *Running this test manually will result in: app displaying comic title, cover image, description, and attribution url associated with the given comic ID*
-2. testNoDescription - testing app with valid comic ID for a comic that does not have a description
+2. testNoDescription — testing app with valid comic ID for a comic that does not have a description
 * *Running this test manually will result in: app displaying comic title, cover image and attribution url associated with the given comic. App will display message "Description not available for this comic" instead of the comic description.*
-3. testInvalidID - testing app with invalid comic ID
+3. testInvalidID — testing app with invalid comic ID
 * *Running this test manually will result in: app displaying alert with a message "You provided an invalid comic ID. Please try again." Nothing will be displayed on screen.*
-4. testNoID - testing app with no comic ID inputted by user
+4. testNoID — testing app with no comic ID inputted by user
 * *Running this test manually will result in: app displaying alert with message "You forgot to provide a comic ID. Please try again." Nothing will be displayed on screen.*
 
-### There are 3 UI Tests included in the project - All tests pass when run
-1. testValidID - testing app with valid comic ID.
-* *Test Behavior: App opens, tap on search bar, valid Comic ID inputted to the search bar, search button pressed, comic information displays on screen, scroll down the page, scroll up the page - end of test*
-2. testInvalidID - testing app with invalid comic ID
-* *Test Behavior: App opens, tap on search bar, invalid Comic ID inputted to the search bar, search button pressed, alert displayed to user with message "You provided an invalid comic ID. Please try again," no other display on screen, alert dismissed - end of test*
-3. testNoID - testing app with no comic ID inputted by user
-* *Test Behavior: App opens, tap on search bar, invalid Comic ID inputted to the search bar, search button pressed, alert displayed to user with message "You forgot to provide a comic ID. Please try again," no other display on screen, alert dismissed - end of test*
+### There are 3 UI Tests included in the project — All tests pass when run
+1. testValidID — testing app with valid comic ID.
+* *Test Behavior: App opens, tap on search bar, valid Comic ID inputted to the search bar, search button pressed, comic information displays on screen, scroll down the page, scroll up the page — end of test*
+2. testInvalidID — testing app with invalid comic ID
+* *Test Behavior: App opens, tap on search bar, invalid Comic ID inputted to the search bar, search button pressed, alert displayed to user with message "You provided an invalid comic ID. Please try again," no other display on screen, alert dismissed — end of test*
+3. testNoID — testing app with no comic ID inputted by user
+* *Test Behavior: App opens, tap on search bar, invalid Comic ID inputted to the search bar, search button pressed, alert displayed to user with message "You forgot to provide a comic ID. Please try again," no other display on screen, alert dismissed — end of test*
 
 ## How to Use
 
@@ -158,7 +158,7 @@ Where:
  
  ## Sources
  
- * Marvel Developer API - developer.marvel.com
- * Images (cover images, launch screen image, app icon image) - marvel.com
- * Authorization and Signing - https://developer.marvel.com/documentation/authorization
+ * Marvel Developer API: developer.marvel.com
+ * Images (cover images, launch screen image, app icon image): marvel.com
+ * Authorization and Signing: https://developer.marvel.com/documentation/authorization
  * The Data that is Displayed in this Application is Provided by Marvel. © 2014 Marvel
