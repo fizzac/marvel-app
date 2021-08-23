@@ -37,9 +37,8 @@ class Marvel_AppUITests: XCTestCase {
         // Launch app
         app.launch()
         
-        //Triple tap textfield to highlight placeholder text and replace with valid comic ID
-        let idTextView = app.textFields.element
-        idTextView.tap(withNumberOfTaps: 3, numberOfTouches: 1)
+        //Tap textfield and enter valid comic ID
+        app.textFields.element.tap()
         sleep(1)
         app.textFields.element.typeText("41778")
         
@@ -59,9 +58,8 @@ class Marvel_AppUITests: XCTestCase {
         // Launch app
         app.launch()
         
-        //Triple tap textfield to highlight placeholder text and replace with invalid comic ID
-        let idTextView = app.textFields.element
-        idTextView.tap(withNumberOfTaps: 3, numberOfTouches: 1)
+        //Tap textfield and enter invalid comic ID
+        app.textFields.element.tap()
         sleep(1)
         app.textFields.element.typeText("123456789")
         

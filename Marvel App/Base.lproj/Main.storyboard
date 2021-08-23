@@ -16,14 +16,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="485"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="Qxb-9n-p7y">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="Qxb-9n-p7y">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="485"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tY6-Rf-6UP" userLabel="Search Stack View">
-                                        <rect key="frame" x="10" y="0.0" width="409" height="48.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X-MEN: DAYS OF FUTURE PAST TPB [NEW PRINTING] (Trade Paperback)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpn-Yt-aWB">
+                                        <rect key="frame" x="10" y="73.5" width="300" height="122"/>
+                                        <accessibility key="accessibilityConfiguration" label="titleLabel"/>
+                                        <fontDescription key="fontDescription" name="Verdana-BoldItalic" family="Verdana" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YU2-Ww-pue">
+                                        <rect key="frame" x="85" y="220.5" width="150" height="225"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="DPz-aE-0TX"/>
+                                            <constraint firstAttribute="height" constant="225" id="gva-tf-J1T"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvg-wg-bMn">
+                                        <rect key="frame" x="10" y="470.5" width="300" height="241"/>
+                                        <accessibility key="accessibilityConfiguration" label="descriptionLabel"/>
+                                        <string key="text">"The Daily Bugle's got a new star reporter. Ethan Edwards is his name! Peter may get the pic, but not before Ethan's got the scoop. And if that weren't enough, there may be even more to Ethan than meets the eye...</string>
+                                        <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marvel Attribution Label Test" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pU0-Wq-vCY">
+                                        <rect key="frame" x="10" y="736.5" width="300" height="18.5"/>
+                                        <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="tY6-Rf-6UP" userLabel="Search Stack View">
+                                        <rect key="frame" x="10" y="0.0" width="300" height="48.5"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter Comic ID" borderStyle="roundedRect" placeholder="Enter Comic ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oME-7b-rls">
-                                                <rect key="frame" x="0.0" y="0.0" width="279" height="48.5"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Comic ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oME-7b-rls">
+                                                <rect key="frame" x="0.0" y="0.0" width="155" height="48.5"/>
                                                 <fontDescription key="fontDescription" name="Verdana-Italic" family="Verdana" pointSize="23"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <userDefinedRuntimeAttributes>
@@ -33,7 +61,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxB-GG-5TQ" userLabel="Search">
-                                                <rect key="frame" x="289" y="0.0" width="120" height="48.5"/>
+                                                <rect key="frame" x="180" y="0.0" width="120" height="48.5"/>
                                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                                 <accessibility key="accessibilityConfiguration" label="searchButton"/>
                                                 <constraints>
@@ -54,50 +82,22 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X-MEN: DAYS OF FUTURE PAST TPB [NEW PRINTING] (Trade Paperback)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpn-Yt-aWB">
-                                        <rect key="frame" x="10" y="73.5" width="409" height="91.5"/>
-                                        <accessibility key="accessibilityConfiguration" label="titleLabel"/>
-                                        <fontDescription key="fontDescription" name="Verdana-BoldItalic" family="Verdana" pointSize="25"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YU2-Ww-pue">
-                                        <rect key="frame" x="85" y="190" width="150" height="225"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="DPz-aE-0TX"/>
-                                            <constraint firstAttribute="height" constant="225" id="gva-tf-J1T"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvg-wg-bMn">
-                                        <rect key="frame" x="10" y="440" width="409" height="187.5"/>
-                                        <accessibility key="accessibilityConfiguration" label="descriptionLabel"/>
-                                        <string key="text">"The Daily Bugle's got a new star reporter. Ethan Edwards is his name! Peter may get the pic, but not before Ethan's got the scoop. And if that weren't enough, there may be even more to Ethan than meets the eye...</string>
-                                        <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="22"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marvel Attribution Label Test" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pU0-Wq-vCY">
-                                        <rect key="frame" x="10" y="652.5" width="409" height="18.5"/>
-                                        <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="15"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="tY6-Rf-6UP" firstAttribute="leading" secondItem="Qxb-9n-p7y" secondAttribute="leading" constant="10" id="2nN-VE-CdN"/>
-                                    <constraint firstItem="xpn-Yt-aWB" firstAttribute="leading" secondItem="Qxb-9n-p7y" secondAttribute="leading" constant="10" id="6XI-wZ-0ow"/>
+                                    <constraint firstItem="ZE4-Oq-WFT" firstAttribute="trailing" secondItem="dvg-wg-bMn" secondAttribute="trailing" constant="10" id="2Nn-Vt-qUb"/>
+                                    <constraint firstItem="ZE4-Oq-WFT" firstAttribute="trailing" secondItem="tY6-Rf-6UP" secondAttribute="trailing" constant="10" id="5Nu-vI-icz"/>
                                     <constraint firstItem="YU2-Ww-pue" firstAttribute="centerX" secondItem="Qxb-9n-p7y" secondAttribute="centerX" id="7cr-In-amF"/>
-                                    <constraint firstAttribute="trailing" secondItem="dvg-wg-bMn" secondAttribute="trailing" constant="10" id="7j9-6Y-gXt"/>
-                                    <constraint firstItem="pU0-Wq-vCY" firstAttribute="leading" secondItem="Qxb-9n-p7y" secondAttribute="leading" constant="10" id="DbX-Yh-yuf"/>
+                                    <constraint firstItem="ZE4-Oq-WFT" firstAttribute="trailing" secondItem="xpn-Yt-aWB" secondAttribute="trailing" constant="10" id="BQn-ej-Z4u"/>
                                     <constraint firstAttribute="bottom" secondItem="pU0-Wq-vCY" secondAttribute="bottom" constant="5" id="DvR-Tc-sVb"/>
                                     <constraint firstItem="xpn-Yt-aWB" firstAttribute="top" secondItem="tY6-Rf-6UP" secondAttribute="bottom" constant="25" id="M2q-JM-BQs"/>
+                                    <constraint firstItem="ZE4-Oq-WFT" firstAttribute="trailing" secondItem="pU0-Wq-vCY" secondAttribute="trailing" constant="10" id="MD6-7R-cfB"/>
                                     <constraint firstItem="YU2-Ww-pue" firstAttribute="top" secondItem="xpn-Yt-aWB" secondAttribute="bottom" constant="25" id="V2G-nP-RQJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="xpn-Yt-aWB" secondAttribute="trailing" constant="10" id="cfV-lq-hsV"/>
                                     <constraint firstItem="dvg-wg-bMn" firstAttribute="top" secondItem="YU2-Ww-pue" secondAttribute="bottom" constant="25" id="chc-Ky-wdE"/>
-                                    <constraint firstAttribute="trailing" secondItem="pU0-Wq-vCY" secondAttribute="trailing" constant="10" id="gfA-zq-9BQ"/>
+                                    <constraint firstItem="dvg-wg-bMn" firstAttribute="leading" secondItem="ZE4-Oq-WFT" secondAttribute="leading" constant="10" id="gZn-6b-Cij"/>
                                     <constraint firstItem="pU0-Wq-vCY" firstAttribute="top" secondItem="dvg-wg-bMn" secondAttribute="bottom" constant="25" id="hz1-YZ-tJK"/>
-                                    <constraint firstItem="dvg-wg-bMn" firstAttribute="leading" secondItem="Qxb-9n-p7y" secondAttribute="leading" constant="10" id="izS-xj-Zoy"/>
-                                    <constraint firstAttribute="trailing" secondItem="tY6-Rf-6UP" secondAttribute="trailing" constant="10" id="kWO-Gm-paM"/>
+                                    <constraint firstItem="tY6-Rf-6UP" firstAttribute="leading" secondItem="ZE4-Oq-WFT" secondAttribute="leading" constant="10" id="j5P-oJ-mnZ"/>
+                                    <constraint firstItem="xpn-Yt-aWB" firstAttribute="leading" secondItem="ZE4-Oq-WFT" secondAttribute="leading" constant="10" id="jc5-mr-8tk"/>
+                                    <constraint firstItem="pU0-Wq-vCY" firstAttribute="leading" secondItem="ZE4-Oq-WFT" secondAttribute="leading" constant="10" id="jup-e5-5y4"/>
                                     <constraint firstItem="tY6-Rf-6UP" firstAttribute="top" secondItem="Qxb-9n-p7y" secondAttribute="top" id="la9-5d-jen"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="wYz-QC-fYN"/>
@@ -119,13 +119,12 @@
                         <outlet property="comicImage" destination="YU2-Ww-pue" id="zkf-6c-p5p"/>
                         <outlet property="descriptionLabel" destination="dvg-wg-bMn" id="u90-Lk-a2U"/>
                         <outlet property="idTextField" destination="oME-7b-rls" id="yps-TH-R7U"/>
-                        <outlet property="searchStackView" destination="tY6-Rf-6UP" id="hGp-BD-VKG"/>
                         <outlet property="titleLabel" destination="xpn-Yt-aWB" id="9sC-5s-bq6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-200.00000000000003" y="77.008928571428569"/>
+            <point key="canvasLocation" x="-200.625" y="76.875"/>
         </scene>
     </scenes>
     <resources>
