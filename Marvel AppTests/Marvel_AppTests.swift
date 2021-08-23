@@ -98,7 +98,7 @@ class Marvel_AppTests: XCTestCase {
         
         // Make API request with invalid comic ID
         let inputID = "123456789"
-        let url = URL(string: "https://apple.com")!
+        let url = URL(string: "https://marvel.com")!
         
         _ = URLSession.shared.dataTask(with: url)
         {_,_,_ in
