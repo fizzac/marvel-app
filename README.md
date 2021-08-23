@@ -124,17 +124,17 @@ Where:
 
 ### There are 4 Unit Tests included in the project - All tests pass when run
 1. testValidID - testing app with valid comic ID for a comic that has a description
-* *Running this test manually will result in: app displaying comic title, cover image, description, and attribution url associated with the given comic ID
+* *Running this test manually will result in: app displaying comic title, cover image, description, and attribution url associated with the given comic ID*
 2. testNoDescription - testing app with valid comic ID for a comic that does not have a description
-* *Running this test manually will result in: app displaying comic title, cover image and attribution url associated with the given comic. App will display message "Description not available for this comic" instead of the comic description.
+* *Running this test manually will result in: app displaying comic title, cover image and attribution url associated with the given comic. App will display message "Description not available for this comic" instead of the comic description.*
 3. testInvalidID - testing app with invalid comic ID
-* *Running this test manually will result in: app displaying alert with a message "You provided an invalid comic ID. Please try again." Nothing will be displayed on screen.
+* *Running this test manually will result in: app displaying alert with a message "You provided an invalid comic ID. Please try again." Nothing will be displayed on screen.*
 4. testNoID - testing app with no comic ID inputted by user
-* *Running this test manually will result in: app displaying alert with message "You forgot to provide a comic ID. Please try again." Nothing will be displayed on screen.
+* *Running this test manually will result in: app displaying alert with message "You forgot to provide a comic ID. Please try again." Nothing will be displayed on screen.*
 
 ### There are 3 UI Tests included in the project - All tests pass when run
 1. testValidID - testing app with valid comic ID.
-* *Test Behavior: App opens, tap on search bar, valid Comic ID inputted to the search bar, search button pressed, comic information displays on screen, scroll down the page, scroll up the page - end of test
+* *Test Behavior: App opens, tap on search bar, valid Comic ID inputted to the search bar, search button pressed, comic information displays on screen, scroll down the page, scroll up the page - end of test*
 2. testInvalidID - testing app with invalid comic ID
 * *Test Behavior: App opens, tap on search bar, invalid Comic ID inputted to the search bar, search button pressed, alert displayed to user with message "You provided an invalid comic ID. Please try again," no other display on screen, alert dismissed - end of test*
 3. testNoID - testing app with no comic ID inputted by user
